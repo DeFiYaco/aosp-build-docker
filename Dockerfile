@@ -1,28 +1,29 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 WORKDIR /AOSP/
-# Java environment setup
-RUN apt-get update && \
-    apt-get install -y \
-     openjdk-8-jdk
 # Installing tools
 RUN apt-get update && \
     apt-get install -y \
+        git-core \
+        gnupg \
+        flex \
         bison \
-        g++-multilib \
-        git \
         gperf \
-        libxml2-utils \
-        make \
+        build-essential \
         zip \
-        liblz4-tool \
-        curl
-# Installing Repo
-RUN mkdir ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+        curl \
+        zlib1g-dev \
+        gcc-multilib \
+        g++-multilib \
+        libc6-dev-i386 \
+        lib32ncurses5-dev \
+        x11proto-core-dev \
+        libx11-dev \
+        lib32z-dev \
+        libgl1-mesa-dev \
+        libxml2-utils \
+        xsltproc \
+        unzip
 
-# Setting PATH variable
-SHELL ["/bin/bash", "-c"] 
-RUN echo 'export PATH=~/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
 
-# Initialise the AOSP tree
 
