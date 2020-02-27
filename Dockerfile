@@ -18,8 +18,11 @@ RUN apt-get update && \
         liblz4-tool \
         curl
 # Installing Repo
-RUN mkdir ./bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ./bin/repo && chmod a+x ./bin/repo
+RUN mkdir ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
 
 # Setting PATH variable
 SHELL ["/bin/bash", "-c"] 
-RUN echo 'export PATH=/AOSP/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+RUN echo 'export PATH=~/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+
+# Initialise the AOSP tree
+
