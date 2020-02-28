@@ -21,10 +21,11 @@ Minimal build environment for syncing device trees using repo tool and compiling
 
 ## How to sync
 * Set up git config  
-  ```git config --global user.name "Your Name"
+  ```
+     git config --global user.name "Your Name"
      git config --global user.email "you@example.com"
   ```
-* Initialize repository from AOSP manifest 
+* Initialize repository from AOSP manifest.  
   `repo init -u https://android.googlesource.com/platform/manifest`
 * Finally sync and grab a coffee or two since it will take some time to download ~200 GB of data and check out.  
   `repo sync`
