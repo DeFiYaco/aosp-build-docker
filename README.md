@@ -1,5 +1,5 @@
 # aosp-build-docker
-Docker image for building AOSP roms
+Docker image for building AOSP roms. Great solution if you don't want to fiddle with your OS installation and dependencies but still want to build roms.
 
 Minimal build environment for syncing device trees using repo tool and compiling ROM.
 
