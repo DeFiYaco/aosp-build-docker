@@ -12,12 +12,21 @@ Minimal build environment for syncing device trees using repo tool and compiling
 
 # How to use
 
-* Clone this repository
-* `docker build -t <imageTag> .`
-* `docker run -it -v <pathOnHost>:/AOSP/ <imageTag> bash`
+* Clone this repository  
+  `git clone <link>`
+* Build docker image from provided Dockerfile and replace <imageTag> with some name for easy use.  
+  `docker build -t <imageTag> .`
+* Replace <pathOnHost> with preferred path on host. That directory will be used to output everything.  
+   `docker run -it -v <pathOnHost>:/AOSP/ <imageTag> bash`
 
 ## How to sync
-* `git config --global user.name "Your Name"`
-* `git config --global user.email "you@example.com"`
-* `repo init -u https://android.googlesource.com/platform/manifest`
-* `repo sync`
+* Set up git config  
+  ```git config --global user.name "Your Name"
+     git config --global user.email "you@example.com"
+  ```
+* Initialize repository from AOSP manifest 
+  `repo init -u https://android.googlesource.com/platform/manifest`
+* Finally sync and grab a coffee or two since it will take some time to download ~200 GB of data and check out.  
+  `repo sync`
+## How to build
+* 
