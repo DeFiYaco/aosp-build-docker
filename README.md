@@ -14,10 +14,10 @@ Minimal build environment for syncing device trees using repo tool and compiling
 
 * Clone this repository  
   `git clone <link>`
-* Build docker image from provided Dockerfile and replace <imageTag> with some name for easy use.  
-  `docker build -t <imageTag> .`
-* Replace <pathOnHost> with preferred path on host. That directory will be used to output everything.  
-   `docker run -it -v <pathOnHost>:/AOSP/ <imageTag> bash`
+* Build docker image from provided Dockerfile.  
+  `docker-compose build`
+* Runs the built image interactively.
+   `docker-compose up`
 
 ## How to sync
 * Set up git config  
